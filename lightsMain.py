@@ -27,17 +27,17 @@ while True:
     onoffIn = GPIO.input(onoff)
 
     if upIn:
-        GPIO.output(red, False)
-    else:
         GPIO.output(red, True)
+    else:
+        GPIO.output(red, False)
 
     if downIn:
-        GPIO.output(blue, False)
+        GPIO.output(blue, True)
     else:
         GPIO.output(blue, False)
 
     if onoffIn:
-        GPIO.output(black, False)
+        GPIO.output(black, True)
     else:
         GPIO.output(black, False)
 
