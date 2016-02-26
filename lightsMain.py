@@ -28,6 +28,22 @@ while True:                         # Main loop
     upIn = GPIO.input(up)
     downIn = GPIO.input(down)
     onoffIn = GPIO.input(onoff)
+    
+    if upIn:                        # Handle button presses
+        print('up')
+        if state < 4:
+            state += 1
+    if downIn:
+        print('down')
+        if state > 1:
+            state -= 1
+    if onoffIn:
+        print('onoff')
+        if state > 0:
+            oldstate = state
+            state = 0
+        elif state == 0:
+            state = oldstate
 
     if state == 0:                  # All lights off
         GPIO.output(red, False)
@@ -54,22 +70,6 @@ while True:                         # Main loop
         GPIO.output(blue, True)
         GPIO.output(black, True)
         GPIO.output(gold, True)
-
-    if upIn:                        # Handle button presses
-        print('up')
-        if state < 4:
-            state += 1
-    if downIn:
-        print('down')
-        if state > 1:
-            state -= 1
-    if onoffIn:
-        print('onoff')
-        if state > 0:
-            oldstate = state
-            state = 0
-        elif state == 0:
-            state = oldstate
 
     print(state)
     time.sleep(0.1)
