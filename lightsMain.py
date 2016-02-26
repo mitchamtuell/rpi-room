@@ -25,10 +25,10 @@ state = 4
 oldstate = 0
 
 while True:                         # Main loop
-    upIn = GPIO.input(up)
-    downIn = GPIO.input(down)
-    onoffIn = GPIO.input(onoff)
-    
+    upIn = not GPIO.input(up)
+    downIn = not GPIO.input(down)
+    onoffIn = not GPIO.input(onoff)
+
     if upIn:                        # Handle button presses
         print('up')
         if state < 4:
