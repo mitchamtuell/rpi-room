@@ -68,5 +68,6 @@ while True:                         # Main loop
         elif state == 0:
             state = oldstate
 
+    print(state)
     time.sleep(0.1)
 
