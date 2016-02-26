@@ -46,30 +46,30 @@ while True:                         # Main loop
             state = oldstate
 
     if state == 0:                  # All lights off
-        GPIO.output(red, False)
-        GPIO.output(blue, False)
-        GPIO.output(black, False)
-        GPIO.output(gold, False)
-    elif state == 1:                # Red on
-        GPIO.output(red, True)
-        GPIO.output(blue, False)
-        GPIO.output(black, False)
-        GPIO.output(gold, False)
-    elif state == 2:                # Red, Blue on
-        GPIO.output(red, True)
-        GPIO.output(blue, True)
-        GPIO.output(black, False)
-        GPIO.output(gold, False)
-    elif state == 3:                # Red, Blue, Black on
-        GPIO.output(red, True)
-        GPIO.output(blue, True)
-        GPIO.output(black, True)
-        GPIO.output(gold, False)
-    elif state == 4:                # All lights on
         GPIO.output(red, True)
         GPIO.output(blue, True)
         GPIO.output(black, True)
         GPIO.output(gold, True)
+    elif state == 1:                # Red on
+        GPIO.output(red, False)
+        GPIO.output(blue, True)
+        GPIO.output(black, True)
+        GPIO.output(gold, True)
+    elif state == 2:                # Red, Blue on
+        GPIO.output(red, False)
+        GPIO.output(blue, False)
+        GPIO.output(black, True)
+        GPIO.output(gold, True)
+    elif state == 3:                # Red, Blue, Black on
+        GPIO.output(red, False)
+        GPIO.output(blue, False)
+        GPIO.output(black, False)
+        GPIO.output(gold, True)
+    elif state == 4:                # All lights on
+        GPIO.output(red, False)
+        GPIO.output(blue, False)
+        GPIO.output(black, False)
+        GPIO.output(gold, False)
 
     print(state)
     time.sleep(0.1)
