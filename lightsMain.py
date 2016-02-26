@@ -56,12 +56,15 @@ while True:                         # Main loop
         GPIO.output(gold, True)
 
     if upIn:                        # Handle button presses
+        print('up')
         if state < 4:
             state += 1
     if downIn:
+        print('down')
         if state > 1:
             state -= 1
     if onoffIn:
+        print('onoff')
         if state > 0:
             oldstate = state
             state = 0
