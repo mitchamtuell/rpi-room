@@ -17,9 +17,9 @@ GPIO.setup(blue, GPIO.OUT)
 GPIO.setup(black, GPIO.OUT)
 GPIO.setup(gold, GPIO.OUT)
 
-GPIO.setup(down, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(up, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(onoff, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(down, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(up, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(onoff, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 state = 4
 oldstate = 0
