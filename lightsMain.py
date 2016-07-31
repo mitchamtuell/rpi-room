@@ -72,5 +72,9 @@ while True:                         # Main loop
         GPIO.output(gold, False)
 
     print(state)
+    
+    if downIn or upIn or onoffIn:   # Stall in this loop if any buttons are still held down
+        pass
+    
     time.sleep(0.1)
 
