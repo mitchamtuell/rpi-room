@@ -73,7 +73,7 @@ while True:                         # Main loop
 
     print(state)
     
-    while downIn or upIn or onoffIn:   # Stall in this loop if any buttons are still held down
+    while not GPIO.input(up) or not GPIO.input(down) or not GPIO.input(onoff):   # Stall in this loop if any buttons are still held down
         pass
     
     time.sleep(0.1)
